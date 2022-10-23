@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font: 16px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+li,
+ul,
+a {
+    text-decoration: none;
+    list-style: none;
+}

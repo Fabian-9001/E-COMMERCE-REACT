@@ -1,0 +1,8 @@
+.home__container__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
