@@ -14,7 +14,7 @@ export const { setProductsGlobal } = productsSlice.actions
 
 export default productsSlice.reducer
 
-export const getAllProductsCart = () => (dispatch) => {
+export const getAllProducts = () => (dispatch) => {
     const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/products'
     return axios.get(URL,getConfig())
     .then(res => dispatch(setProductsGlobal(res.data.data.products)))

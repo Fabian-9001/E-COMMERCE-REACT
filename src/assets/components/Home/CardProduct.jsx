@@ -7,7 +7,7 @@ import getConfig from '../../../utils/getConfig'
 import './styles/Home.css'
 
 const CartProduct = ({ product }) => {
-
+    console.log(product)
     const navigate = useNavigate()
 
     const dispatch = useDispatch()
@@ -39,6 +39,7 @@ const CartProduct = ({ product }) => {
                 <img className='card__img__product' src={product.productImgs[0]} alt="" />
             </header>
             <div className='card__body'>
+                <p className='card__category'>{product.category.name}</p>
                 <h3 className='card__name'>{product.title}</h3>
                 <div className='card__subContainer'>
                     <span className='card__price__title'>Price</span>
@@ -47,6 +48,7 @@ const CartProduct = ({ product }) => {
                 <div className='card__subContainer'>
                     <button onClick={handleaddCart} className='card__button'>
                         <img className='card__img__cart' src="img/carrito de compras.gif" alt="" />
+                        AGREGAR
                     </button>
                 </div>
             </div>

@@ -1,8 +1,163 @@
+/*--SLIDER--*/
+.container__slider {
+    width: 100vw;
+    height: auto;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    overflow: hidden;
+    background-color: black;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: sliderAuto 20s infinite alternate linear;
+}
+
+.container__slider__img {
+    width: 100vw;
+}
+
+.slider__img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+}
+
+@keyframes sliderAuto {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+
+/*HOME PRODUCTS*/
+
+.home__input {
+    margin: 20px;
+    padding: 10px 20px;
+    border: 2px transparent;
+    border-radius: 25px;
+    box-shadow: inset 4px 4px 10px 1px rgb(233, 233, 233), 3px 3px 10px 0px rgba(238, 238, 238, 0.981), -7px -7px 10px 1px rgb(252, 252, 252);
+}
+
+.home__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .home__container__products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card__product {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(44, 25, 71);
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.5s;
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: white;
+}
+
+.card__img__product {
+    width: 50%
+}
+
+.card__body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: auto;
 }
 
+.card__category,
+.card__name {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.card__subContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.card__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+    background-color: white;
+    border: transparent;
+    margin: 30px 0 10px 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card__img__cart {
+    width: 40px
+}
+
+.card__product:hover {
+   transform: translateY(15px);
+    transition: 0.5s;
+}
+
+.card__product:hover .card__button {
+    opacity: 1;
+    transition: 0.5s;
+}
 

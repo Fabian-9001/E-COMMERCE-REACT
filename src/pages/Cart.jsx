@@ -1,11 +1,15 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import CartProduct from '../assets/components/Home/CardProduct'
+import CartProduct from '../assets/components/cart/CartProduct'
 import { getAllProductsCart, setCartGlobal } from '../store/slices/cart.slice'
 import getConfig from '../utils/getConfig'
 
 const Cart = () => {
+
+  const [total, setTotal] = useState(0)
+
+
 
   const cart = useSelector(state => state.cart)
 
@@ -15,7 +19,17 @@ const Cart = () => {
     dispatch(getAllProductsCart())
   }, [])
 
-  console.log(cart)
+  
+
+  useEffect(() => {
+    if (cart) {
+      const result = cart.products.reduce((acc, cv) => {
+        return acc + Number(cv.price) * cv.productsInCart.quantity
+      }, 0)
+      setTotal(result)
+    }
+  }, [cart])
+
 
 
   const handlePurchase = () => {
@@ -30,13 +44,14 @@ const Cart = () => {
     }
 
     axios.post(URL, data, getConfig())
-      .then(res => {console.log(res.data)
-      dispatch(setCartGlobal(null))
+      .then(res => {
+        console.log(res.data)
+        dispatch(setCartGlobal(null))
+        setTotal(0)
       })
       .catch(err => console.log(err))
-
-
   }
+
 
   return (
     <div>
@@ -47,6 +62,7 @@ const Cart = () => {
           ))
         }
       </div>
+      <h2>Tota:{total}</h2>
       <button onClick={handlePurchase}>Buy Now</button>
     </div>
   )

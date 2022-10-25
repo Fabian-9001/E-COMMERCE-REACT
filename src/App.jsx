@@ -1,5 +1,3 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Header from './assets/components/shared/Header'
 import './App.css'
@@ -11,7 +9,7 @@ import ProtectedRoutes from './pages/ProtectedRoutes'
 import Purchases from './pages/Purchases'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   /* useEffect(() => {
      const data = {
@@ -31,9 +29,10 @@ function App() {
 
   return (
     <div className="App">
+      
       <Header />
+      
       <Routes >
-
         <Route path='/' element={<Home />} />
         <Route path='/product/:id' element={<ProductId />} />
         <Route path='/login' element={<LoginScreen />} />
@@ -43,7 +42,6 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/purchases' element={<Purchases />} />
         </Route>
-
       </Routes>
 
     </div>

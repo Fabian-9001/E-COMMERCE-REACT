@@ -18,7 +18,6 @@ const SimilarProducts = ({ product }) => {
 
 
     useEffect(() => {
-
         if (categories && product) {
             const cb = category => category.name === product.category
             console.log(product, categories)
