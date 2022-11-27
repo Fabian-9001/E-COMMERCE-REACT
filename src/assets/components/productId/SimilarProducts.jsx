@@ -38,7 +38,7 @@ const SimilarProducts = ({ product }) => {
     
     return (
         <div>
-            <div>
+            <div className='similar__products'>
                 {
                     similarProducts?.map(prod => {
                         if (product.id !== prod.id) {

@@ -7,7 +7,11 @@ const InputSearch = ({ setInputText, inputText }) => {
     }
 
     return (
-        <input className='home__input' value={inputText} type="text" onChange={handleChange} />
+        <section className='container__input'>
+            <form className='form__input' action="">
+                    <input className='search__input' value={inputText} type="text" onChange={handleChange} />
+            </form>
+        </section>
     )
 }
 
